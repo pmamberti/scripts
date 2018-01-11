@@ -20,6 +20,9 @@ echo "I'll take care of that for you!"
 echo "Safari will close and update now"
 echo "+++++++++++++++++++++++++++++++++++++++"
 echo $'\n'
+
+# Close Safari and download the update
+osascript -e 'quit app "Safari"'
 softwareupdate -i Safari11.0.2Sierra-11.0.2
 echo $'\n'
 echo "+++++++++++++++++++++++++++++++++++++++"
