@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # Check Safari Version
-
 SAFARIVERSION=$(defaults read /Applications/Safari.app/Contents/Info.plist | awk '/CFBundleVersion/ {print$3}' | sed 's/[";]//g')
 echo $SAFARIVERSION
 
 # Check if safari version is the correct one and install the update if not
-if [[ $SAFARIVERSION = "12604.4.7.1.1" ]];
+if [[ $SAFARIVERSION = "12604.4.7.1.6" ]];
 then
 echo "Your Version of Safari is up to date!"
 else
