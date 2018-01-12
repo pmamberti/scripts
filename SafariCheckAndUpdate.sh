@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This is a script that checks Safari's Version on Sierra,
+# compares it to the required one to include mitigations
+# for Spectre/Meltdown and updates it if necessary.
 
 # Check Safari Version
 SAFARIVERSION=$(defaults read /Applications/Safari.app/Contents/Info.plist | awk '/CFBundleVersion/ {print$3}' | sed 's/[";]//g')
