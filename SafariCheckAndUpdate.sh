@@ -4,6 +4,8 @@
 # compares it to the required one to include mitigations
 # for Spectre/Meltdown and updates it if necessary.
 
+# set -x
+
 # Check Safari Version
 SAFARIVERSION=$(defaults read /Applications/Safari.app/Contents/Info.plist | awk '/CFBundleVersion/ {print$3}' | sed 's/[";]//g')
 
@@ -42,12 +44,13 @@ echo $'\n'
 
 # Get Mac Serial Number
 SERIALNUMBER=$(system_profiler SPHardwareDataType | awk '/Serial/ {print $4}')
-
-# Print out Serial Number for Inventory
-echo "Your Serial number is:" '`'$SERIALNUMBER'`'
-
-# Get Display Serial Number
 DISPLAYSERIALNUMBER=$(system_profiler SPDisplaysDataType | awk '/Display Serial Number/ {print $4}')
 
+# Print out current user
+echo "My User is:" '`'$USER'`'
+# Print out Laptop hostname
+echo "My Computer Name is:" '`'$(hostname)'`'
+# Print out Serial Number for Inventory
+echo "My Mac Serial number is:" '`'$SERIALNUMBER'`'
 # Print Display Serial Number
-echo "Your Display Serial number is:" '`'$DISPLAYSERIALNUMBER'`'
+echo "My Display Serial number is:" '`'$DISPLAYSERIALNUMBER'`'
