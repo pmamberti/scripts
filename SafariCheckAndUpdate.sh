@@ -34,8 +34,20 @@ echo "+++++++++++++++++++++++++++++++++++++++"
 echo $'\n'
 fi
 
+# Display instructions
+echo " ‼️ Please select the below, copy it and paste it in slack ‼️ "
+echo $'\n'
+echo "                👇🏼  👇🏼  👇🏼  👇🏼  👇🏼  👇🏼  👇🏼  👇🏼                 "
+echo $'\n'
+
 # Get Mac Serial Number
 SERIALNUMBER=$(system_profiler SPHardwareDataType | awk '/Serial/ {print $4}')
 
 # Print out Serial Number for Inventory
 echo "Your Serial number is:" '`'$SERIALNUMBER'`'
+
+# Get Display Serial Number
+DISPLAYSERIALNUMBER=$(system_profiler SPDisplaysDataType | awk '/Display Serial Number/ {print $4}')
+
+# Print Display Serial Number
+echo "Your Display Serial number is:" '`'$DISPLAYSERIALNUMBER'`'
