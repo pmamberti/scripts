@@ -6,6 +6,8 @@
 
 # set -x
 
+set -eu
+
 # Check Safari Version
 SAFARIVERSION=$(defaults read /Applications/Safari.app/Contents/Info.plist | awk '/CFBundleVersion/ {print$3}' | sed 's/[";]//g')
 
