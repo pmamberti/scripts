@@ -7,10 +7,10 @@
 # set -x
 
 # Check Safari Version
-SAFARIVERSION=$(defaults read /Applications/Safari.app/Contents/Info.plist | awk '/CFBundleVersion/ {print$3}' | sed 's/[";]//g')
+SAFARIVERSION=$(defaults read /Applications/Safari.app/Contents/Info.plist CFBundleShortVersionString)
 
 # Check if safari version is the correct one and install the update if not
-if [[ $SAFARIVERSION = "12604.4.7.1.6" ]];
+if [[ $SAFARIVERSION = "11.0.3" ]];
 then
 echo $'\n'
 echo "+++++++++++++++++++++++++++++++++++++++"
@@ -28,7 +28,7 @@ echo $'\n'
 
 # Close Safari and download the update
 osascript -e 'quit app "Safari"'
-softwareupdate -i Safari11.0.2Sierra-11.0.2
+softwareupdate -i Safari11.0.3Sierra-11.0.3
 echo $'\n'
 echo "+++++++++++++++++++++++++++++++++++++++"
 echo " Update Complete! "
